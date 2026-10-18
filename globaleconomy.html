@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contemporary Global Economy — Complete Study Suite</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111a2e;
+      --card-inner: #18243e;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0ea5e9;
+      --gold: #fbbf24;
+      --green: #22c55e;
+      --red: #ef4444;
+      --border: #233554;
+      --hl-def: #fde047;
+      --hl-term: #38bdf8;
+      --hl-stat: #4ade80;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      padding-bottom: 5rem;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0284c7 0%, #090d16 100%);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .hl-term {
+      background: rgba(56, 189, 248, 0.2);
+      color: var(--hl-term);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-weight: 700;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+
+    .hl-def {
+      background: rgba(251, 191, 36, 0.18);
+      color: var(--hl-def);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-weight: 600;
+      border: 1px solid rgba(251, 191, 36, 0.35);
+    }
+
+    .hl-stat {
+      background: rgba(74, 222, 128, 0.18);
+      color: var(--hl-stat);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-weight: 700;
+      border: 1px solid rgba(74, 222, 128, 0.35);
+    }
+
+    .video-quote {
+      background: #0d1527;
+      border-left: 4px solid var(--gold);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 1.02rem;
+    }
+
+    .video-quote .source-label {
+      display: block;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      background: #0b1120;
+      padding: 0.75rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    nav button.active, nav button:hover {
+      background: var(--accent);
+      color: #090d16;
+      border-color: var(--accent);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      font-size: 1.45rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      color: var(--gold);
+      margin: 1.25rem 0 0.5rem 0;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    li {
+      margin-bottom: 0.45rem;
+    }
+
+    .full-detail-box {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .full-detail-box h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .flashcard {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .flashcard:hover {
+      border-color: var(--accent);
+    }
+
+    .flashcard-q {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .flashcard-a {
+      display: none;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+      color: #cbd5e1;
+    }
+
+    .flashcard.open .flashcard-a {
+      display: block;
+    }
+
+    /* Score & Control Banners */
+    .score-banner {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .score-banner span {
+      font-weight: bold;
+      color: var(--accent);
+      font-size: 1.15rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-ctrl {
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-ctrl:hover {
+      background: var(--accent);
+      color: #090d16;
+      border-color: var(--accent);
+    }
+
+    .quiz-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .quiz-q-num {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .quiz-prompt {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.85rem;
+    }
+
+    .quiz-input-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .quiz-input {
+      flex: 1;
+      padding: 0.65rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #090d16;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .quiz-input:focus {
+      border-color: var(--accent);
+    }
+
+    .btn-submit {
+      background: var(--accent);
+      color: #090d16;
+      border: none;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Multiple Choice Styles */
+    .mc-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .mc-option {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      color: #f1f5f9;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .mc-option:hover:not(:disabled) {
+      border-color: var(--accent);
+      background: #233554;
+    }
+
+    .mc-option.selected-correct {
+      background: rgba(34, 197, 94, 0.25) !important;
+      border-color: var(--green) !important;
+      color: #86efac !important;
+      font-weight: 600;
+    }
+
+    .mc-option.selected-wrong {
+      background: rgba(239, 68, 68, 0.25) !important;
+      border-color: var(--red) !important;
+      color: #fca5a5 !important;
+      font-weight: 600;
+    }
+
+    .mc-option.highlight-answer {
+      border-color: var(--green) !important;
+      color: #86efac !important;
+      font-weight: 600;
+    }
+
+    .feedback-box {
+      display: none;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+    }
+
+    .feedback-box.correct {
+      display: block;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid var(--green);
+      color: #86efac;
+    }
+
+    .feedback-box.wrong {
+      display: block;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid var(--red);
+      color: #fca5a5;
+    }
+
+    .feedback-box strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>The Contemporary Global Economy</h1>
+    <p>Complete Learning Suite • Verbatim Notes • Shufflable 35-Item Identification & Multiple Choice Quizzes</p>
+  </header>
+
+  <nav>
+    <button class="nav-btn active" onclick="showTab('notes')">Verbatim Lecture Notes</button>
+    <button class="nav-btn" onclick="showTab('recall')">Active Recall Cards</button>
+    <button class="nav-btn" onclick="showTab('id-quiz')">Identification Exam (35 Items)</button>
+    <button class="nav-btn" onclick="showTab('mc-quiz')">Multiple Choice Quiz (35 Items)</button>
+  </nav>
+
+  <main>
+    <!-- TAB 1: NOTES -->
+    <section id="notes" class="tab-content active">
+      
+      <div class="card">
+        <h2>Part 1: Defining the Global Economy & Economic Globalization</h2>
+        
+        <h3>Exact Slide & Audio Definitions of Global Economy</h3>
+        <div class="video-quote">
+          <span class="source-label">Slide Definition 1</span>
+          "It is the <span class="hl-def">economy of all humans of the world</span>, considered as the <span class="hl-def">international exchange of goods and services</span> that is expressed in <span class="hl-term">monetary units of account</span>."[cite: 1]
+        </div>
+        <div class="video-quote">
+          <span class="source-label">Slide Definition 2</span>
+          "The economy of our planet. <span class="hl-def">All the economies added up</span>. Everything we buy, everything we sell, everything we make, everything we own, all imports, all exports."[cite: 1]
+        </div>
+        <div class="video-quote">
+          <span class="source-label">Slide Definition 3</span>
+          "The global economy is the <span class="hl-def">world economy or worldwide economy</span>. It is all the economies of the world (the economy of every country) which we consider together as <span class="hl-term">one economic system</span>."[cite: 1]
+        </div>
+        <div class="video-quote">
+          <span class="source-label">Slide Definition 4</span>
+          "Put simply; the <span class="hl-term">GLOBAL ECONOMY</span> is <span class="hl-def">one giant entity</span>."[cite: 1]
+        </div>
+        <div class="video-quote">
+          <span class="source-label">Slide Definition 5</span>
+          "It is also the <span class="hl-def">system of trade and industry across the world</span> that has emerged due to globalization. In other words, the way in which countries' economies have been developing to <span class="hl-term">operate collectively as one system</span>."[cite: 1]
+        </div>
+
+        <h3>Four Dimensions of Global Economy (Slide Presentation)</h3>
+        <ul>
+          <li><strong>Globalization of trade of goods and services:</strong> Cross-border trade that is no longer confined to individual nations or regions[cite: 1].</li>
+          <li><strong>The globalization of financial and capital markets:</strong> International financial institutions operating and moving financial capital worldwide[cite: 1].</li>
+          <li><strong>The globalization of technology and communication:</strong> Rapid worldwide access and sharing of technological tools and communications[cite: 1].</li>
+          <li><strong>The globalization of production:</strong> Moving goods manufacturing from the First World (Europe, North America) into developing nations in <span class="hl-term">Asia, Africa, and Third World countries</span>[cite: 1].</li>
+        </ul>
+
+        <h3>Internationalization vs. Economic Globalization</h3>
+        <div class="full-detail-box">
+          <h4 style="color:var(--accent);">Internationalization</h4>
+          <div class="video-quote">
+            <span class="source-label">Verbatim Slide Meaning</span>
+            "About the <span class="hl-def">extension of economic activities of nation states across borders</span>."[cite: 1]
+          </div>
+          <p>Characterized as a purely <span class="hl-term">quantitative change</span> (expansion in distance and volume of trade across national frontiers)[cite: 1].</p>
+        </div>
+
+        <div class="full-detail-box">
+          <h4 style="color:var(--gold);">Economic Globalization</h4>
+          <div class="video-quote">
+            <span class="source-label">Verbatim Slide Meaning</span>
+            "<span class="hl-def">Functional integration between internationally dispersed activities</span>. That is, a <span class="hl-def">qualitative transformation</span> than just quantitative change."[cite: 1]
+          </div>
+          <p>A deep transformation altering consumer taste, culture, and systemic functional interdependence across societies[cite: 1].</p>
+        </div>
+
+        <h3>Historical Background (Archaic Globalization)</h3>
+        <ul>
+          <li><strong>The Silk Road:</strong> The existence of the world system in which we live stretches back at least <span class="hl-stat">5,000 years</span>, connecting Asia, Africa, and Europe[cite: 1].</li>
+          <li><strong>Age of Discovery:</strong> The discovery of America by <span class="hl-term">Christopher Columbus (1492)</span> and the direct sea route to India by <span class="hl-term">Vasco da Gama</span>[cite: 1].</li>
+          <li><strong>British Industrialization & Napoleonic Wars:</strong> Technological advances and factory organization spreading from Britain across Continental Europe and North America[cite: 1].</li>
+          <li><strong>Founding of First MNCs:</strong> The <span class="hl-term">British East India Company</span> and <span class="hl-term">Dutch East India Company</span> (which drove the colonization of countries like Malaysia)[cite: 1].</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Part 1: The Great Depression (1929–1939)</h2>
+        
+        <h3>Exact Slide & Audio Meaning</h3>
+        <div class="video-quote">
+          <span class="source-label">Verbatim Definition</span>
+          "A depression is a <span class="hl-def">sustained, a long-term downturn in economic activity in on or more economies</span>. Considered by some economists, a <span class="hl-def">rare, and extreme form of recession</span>."[cite: 1]
+        </div>
+        <p>The <span class="hl-term">worst economic downturn in the history of the industrialized world</span>, lasting from <span class="hl-stat">1929 to 1939</span>, beginning in the United States and triggering global economic collapse[cite: 1].</p>
+
+        <h3>Causes of the Great Depression (Slide by Slide)</h3>
+        <ul>
+          <li><strong>Over Production:</strong>
+            <ul>
+              <li>High demand and high prices for agricultural products during <span class="hl-term">World War I</span>[cite: 1].</li>
+              <li>Demand and prices fell sharply after the war[cite: 1].</li>
+              <li>Farmers could not pay back their bank loans[cite: 1].</li>
+            </ul>
+          </li>
+          <li><strong>Decrease in Consumer Spending:</strong>
+            <ul>
+              <li>Rising prices and low wages[cite: 1].</li>
+              <li>Overbuying on credit; large debts had to be paid off[cite: 1].</li>
+              <li><span class="hl-term">Uneven distribution of income</span> — rich got richer and poor got poorer — many Americans could not afford to buy goods produced[cite: 1].</li>
+            </ul>
+          </li>
+          <li><strong>Over Speculation:</strong>
+            <ul>
+              <li>Stocks bought on the hope of quick profit[cite: 1].</li>
+              <li><span class="hl-def">Buying on Margin:</span> Paying a <span class="hl-term">small % of stock's price</span> and <span class="hl-term">borrowing the rest</span> through broker loans[cite: 1].</li>
+              <li>High tariffs harmed world trade[cite: 1].</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>"The Bubble Bursts" & Domino Effect (Slide Statistics)</h3>
+        <ul>
+          <li><strong>Bank Failures:</strong> Banks failed because people withdrew funds in panicked bank runs[cite: 1]. Banks had invested heavily in the stock market and could not repay loans[cite: 1].</li>
+          <li><strong>1933 Failure Stat:</strong> By 1933, <span class="hl-stat">11,000 of nation's 25,000 banks had failed</span>[cite: 1]. Accounts were not insured, causing millions to lose their lifetime savings[cite: 1].</li>
+          <li><strong>The Domino Effect:</strong> People lose jobs &rarr; businesses close down or lay off &rarr; more people lose jobs[cite: 1].</li>
+          <li><strong>Unemployment Scale:</strong> 80,000 seat football stadium metric &rarr; continued for <span class="hl-stat">162 weeks</span> &rarr; <span class="hl-stat">13 million unemployed</span> in the US alone[cite: 1].</li>
+          <li><strong>World War II (1939–1945):</strong> A global war lasting from 1939 to 1945 that worsened economic hardships before postwar recovery was organized[cite: 1, 2].</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Part 2: The Bretton Woods Conference (1944)</h2>
+        <p><strong>Formal Title:</strong> Formally known as the <span class="hl-def">United Nations Monetary and Financial Conference</span> held in Bretton Woods, New Hampshire, USA (July 1–22, 1944), bringing together <span class="hl-stat">730 delegates from all 44 Allied nations</span> to regulate the international monetary and financial order after WWII[cite: 2].</p>
+
+        <h3>Two Conflicting Views on the Role of the IMF</h3>
+        <div class="full-detail-box">
+          <h4 style="color:var(--accent);">Harry Dexter White (USA)</h4>
+          <div class="video-quote">
+            <span class="source-label">Slide Verbatim</span>
+            "He foresaw an IMF that <span class="hl-def">functioned more like a bank, making sure that borrowing states could repay their debts on time</span>."[cite: 2]
+          </div>
+        </div>
+
+        <div class="full-detail-box">
+          <h4 style="color:var(--gold);">John Maynard Keynes (UK)</h4>
+          <div class="video-quote">
+            <span class="source-label">Slide Verbatim</span>
+            "He imagined that the IMF would be a <span class="hl-def">cooperative fund upon which member states could draw to maintain economic activity and employment through periodic crises</span>."[cite: 2]
+          </div>
+        </div>
+
+        <h3>Three Multilateral Postwar Institutions Created</h3>
+        <ol>
+          <li>
+            <strong>International Monetary Fund (IMF):</strong>
+            <ul>
+              <li>Articles of Agreement conceived in July 1944; formally came into existence on <span class="hl-stat">27 December 1945</span> after 29 countries ratified the Articles of Agreement; began financial operations on <span class="hl-stat">March 1, 1947</span>[cite: 2].</li>
+              <li><strong>First Country to Borrow:</strong> On May 8, 1947, <span class="hl-term">France</span> became the first country to borrow from the IMF[cite: 2].</li>
+              <li><strong>Fundamental Missions:</strong>
+                <ol>
+                  <li><span class="hl-term">Economic Surveillance:</span> Oversees the international monetary system and monitors the economic and financial policies of its member countries[cite: 2].</li>
+                  <li><span class="hl-term">Lending:</span> Provides loans to member countries experiencing actual or potential balance of payments problems to help them rebuild their international reserves[cite: 2].</li>
+                  <li><span class="hl-term">Capacity Development:</span> Modernizes economic policies and institutions and trains people[cite: 2].</li>
+                </ol>
+              </li>
+              <li><strong>IMF Resources (Member Quotas):</strong> Member Quotas are the primary source of IMF financial resources[cite: 2]. A country's quota determines its maximum financial commitment to the IMF, its <span class="hl-term">voting power</span>, and its access to IMF financing[cite: 2].</li>
+            </ul>
+          </li>
+          <li>
+            <strong>The World Bank:</strong>
+            <ul>
+              <li>Designed to finance projects that enhance economic development of member states and provides technical assistance and policy advice[cite: 2]. Promotes <span class="hl-def">sustainable development</span> to narrow the income gap between rich and poor countries[cite: 2].</li>
+              <li><strong>Composed of 5 specialized bodies:</strong>
+                <ol>
+                  <li><span class="hl-term">IBRD:</span> International Bank for Reconstruction and Development[cite: 2]</li>
+                  <li><span class="hl-term">IDA:</span> International Development Association[cite: 2]</li>
+                  <li><span class="hl-term">IFC:</span> International Finance Corporation[cite: 2]</li>
+                  <li><span class="hl-term">MIGA:</span> Multilateral Investment Guarantee Agency[cite: 2]</li>
+                  <li><span class="hl-term">ICSID:</span> International Centre for Settlement of Investment Disputes[cite: 2]</li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>General Agreement on Tariffs and Trade (GATT):</strong>
+            <ul>
+              <li>An interim agreement signed in <span class="hl-stat">1947</span> that served as a forum for trade negotiations[cite: 2].</li>
+              <li>Evolved in <span class="hl-stat">1994</span> into the formal <span class="hl-term">World Trade Organization (WTO)</span>[cite: 2].</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <!-- FULL DETAILED NEO-LIBERALISM & NEO-MERCANTILISM -->
+      <div class="card">
+        <h2>Part 2: Full Detailed Study of Neo-liberalism vs. Neo-mercantilism</h2>
+        
+        <!-- SECTION: NEO-LIBERALISM -->
+        <div class="full-detail-box">
+          <h3 style="color:var(--accent); margin-top:0;">1. Neo-liberalism (Free Market Policies)</h3>
+          <p>Neo-liberalism is the free market policy framework that champions economic freedom, open borders, global capital flows, and the reduction of state interference in trade and commerce[cite: 2].</p>
+
+          <h4 style="color:var(--gold); margin-top:1.25rem;">A. Liberalization</h4>
+          <div class="video-quote">
+            <span class="source-label">Slide 52 Verbatim Definition</span>
+            "Liberalization is the <span class="hl-def">reduction of restrictions or barriers on the free exchange of goods between nations</span>."[cite: 2]
+          </div>
+          <p><strong>Detailed Meaning According to the Lecturer:</strong></p>
+          <ul>
+            <li>The goal is to eliminate or significantly reduce tariffs, duties, and barriers so goods flow across countries freely[cite: 2].</li>
+            <li>The speaker notes that while the textbook definition specifies the <span class="hl-def">reduction</span> of restrictions or barriers, some countries go so far as the complete <span class="hl-def">elimination</span> of barriers (zero tariffs) under Free Trade Agreements[cite: 2].</li>
+            <li><em>Example Discussed in Audio:</em> If the Philippine government imposes a 50% tariff on an imported luxury car valued at $1,000,000 USD (paying hundreds of millions of pesos in customs taxes), that is a protectionist barrier[cite: 2]. Under trade liberalization, that tariff rate is reduced (e.g., down to 30%, 20%, or completely down to 0%) to encourage cross-border trade[cite: 2].</li>
+          </ul>
+
+          <h4 style="color:var(--gold); margin-top:1.25rem;">B. Deregulation</h4>
+          <div class="video-quote">
+            <span class="source-label">Slide 53 Verbatim Definition</span>
+            "Deregulation is the <span class="hl-def">reduction and elimination of government power in a particular industry, usually enacted to create more competition within the industry</span>."[cite: 2]
+          </div>
+          <p><strong>Detailed Meaning According to the Lecturer:</strong></p>
+          <ul>
+            <li>Under strict government regulation, the state sets prices, restricts market entry, and controls who can operate[cite: 2].</li>
+            <li>Deregulation removes these governmental constraints, permitting multiple private players to enter, which drives competitive pricing and expands consumer choices[cite: 2].</li>
+            <li>Basic industries discussed: telecommunications, energy/power, and water utilities[cite: 2].</li>
+          </ul>
+
+          <h4 style="color:var(--gold); margin-top:1.25rem;">C. Privatization</h4>
+          <div class="video-quote">
+            <span class="source-label">Slide 55 Verbatim Definition</span>
+            "Privatization is <span class="hl-def">the transfer of ownership, property or business from the government to the private sector</span>."[cite: 2]
+          </div>
+          <p><strong>Detailed Meaning According to the Lecturer:</strong></p>
+          <ul>
+            <li>When industries or companies owned, operated, and controlled by the state are sold off and transferred into the hands of private corporations or investors[cite: 2].</li>
+          </ul>
+
+          <h4 style="color:var(--gold); margin-top:1.25rem;">D. The Philippine Historical Case for Neo-Liberalism</h4>
+          <p>The lecturer explicitly grounds the shift to neo-liberal policies in modern Philippine economic history:</p>
+          <ul>
+            <li><strong>President Corazon Aquino (1986):</strong> Following the end of the Marcos administration in 1986, the Aquino government took over basic industries and utilities that were formerly controlled by the state[cite: 2].</li>
+            <li>The government enacted policies of <span class="hl-term">deregulation</span> and <span class="hl-term">privatization</span>, selling off state-owned corporations and basic utility assets (such as water, power, and telecommunications) to private enterprises to stimulate competition and economic recovery[cite: 2].</li>
+          </ul>
+        </div>
+
+        <!-- SECTION: NEO-MERCANTILISM -->
+        <div class="full-detail-box">
+          <h3 style="color:#f87171; margin-top:0;">2. Neo-mercantilism (Interventionist / Protectionist Policies)</h3>
+          <p>Neo-mercantilism is an economic philosophy that relies on state intervention to protect domestic industries, limit imports, and accumulate national wealth through trade surpluses[cite: 2].</p>
+
+          <h4 style="color:var(--gold); margin-top:1.25rem;">Comprehensive Breakdown of Slide 51 Points & Lecturer Meaning:</h4>
+          
+          <p><strong>1. Tariff and Non-Tariff Barrier Imposition:</strong></p>
+          <ul>
+            <li><em>Tariffs:</em> Taxes or customs duties placed directly on imported goods to make foreign products more expensive than domestically produced goods[cite: 2].</li>
+            <li><em>Non-Tariff Barriers:</em> Administrative rules, licenses, and documentation requirements deliberately constructed to discourage, slow down, or block foreign imports[cite: 2].</li>
+          </ul>
+
+          <p><strong>2. Tight State Regulation:</strong></p>
+          <ul>
+            <li>The national government directly dictates, controls, and oversees the operation of domestic markets, establishing price ceilings, price floors, and strict business licensing requirements[cite: 2].</li>
+          </ul>
+
+          <p><strong>3. Subsidies:</strong></p>
+          <ul>
+            <li>Direct financial assistance or tax incentives given by the government to domestic producers, farmers, or manufacturers so they can lower their production costs and sell their products cheaply without being driven out by foreign competition[cite: 2].</li>
+          </ul>
+
+          <p><strong>4. Import Quotas:</strong></p>
+          <ul>
+            <li>Strict legal limits established by the state regarding the exact volume or quantity of a specific foreign good that is permitted to enter the country over a given time period[cite: 2].</li>
+          </ul>
+
+          <p><strong>5. Health and Environment Standardization:</strong></p>
+          <ul>
+            <li>Imposing exceptionally high, rigorous health, safety, and environmental standards that foreign imports must satisfy before entering the domestic market[cite: 2]. The lecturer notes these are often weaponized as protectionist non-tariff barriers to block foreign competitors from entering[cite: 2].</li>
+          </ul>
+
+          <p><strong>6. Import Substitution:</strong></p>
+          <ul>
+            <li>A core protectionist strategy where a country actively manufactures goods domestically to replace products it previously had to import from abroad, building national industrial self-sufficiency and preventing national wealth from flowing out[cite: 2].</li>
+          </ul>
+
+          <h4 style="color:var(--gold); margin-top:1.25rem;">The Philippine Historical Case for Protectionism:</h4>
+          <ul>
+            <li><strong>President Ferdinand Marcos Sr. (Martial Law Era):</strong> Used by the lecturer as the primary example of an interventionist, protectionist policy structure[cite: 2].</li>
+            <li>Basic industries and public utilities were held under strict, centralized state ownership, management, and control—specifically:
+              <ul>
+                <li><strong>Telecommunications:</strong> PLDT[cite: 2]</li>
+                <li><strong>Electricity & Power Generation:</strong> National Power Corporation (NPC)[cite: 2]</li>
+                <li><strong>Water Distribution:</strong> State-controlled water utility administration[cite: 2]</li>
+              </ul>
+            </li>
+            <li>The government exercised monopoly control over these critical sectors to prevent foreign domination and manage the domestic economy directly from the state level[cite: 2].</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 2: ACTIVE RECALL -->
+    <section id="recall" class="tab-content">
+      <div class="card">
+        <h2>Active Recall Self-Testing Cards</h2>
+        <p style="color:var(--text-muted); margin-bottom: 1rem;">Click each question to test your recall before checking the verbatim answer.</p>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What is the exact slide definition of "Internationalization"? <span>+</span></div>
+          <div class="flashcard-a">"About the <strong>extension of economic activities of nation states across borders</strong>" (a quantitative change)[cite: 1].</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What is the exact slide definition of "Economic Globalization"? <span>+</span></div>
+          <div class="flashcard-a">"<strong>Functional integration between internationally dispersed activities</strong>. That is, a <strong>qualitative transformation</strong> than just quantitative change."[cite: 1]</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What is the exact slide definition of "Buying on Margin"? <span>+</span></div>
+          <div class="flashcard-a">"Paying a <strong>small % of stock's price</strong> and <strong>borrowing the rest</strong>."[cite: 1]</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What were the contrasting visions of Harry Dexter White and John Maynard Keynes? <span>+</span></div>
+          <div class="flashcard-a"><strong>Harry Dexter White (USA):</strong> Foresaw an IMF that "functioned more like a bank, making sure that borrowing states could repay their debts on time."[cite: 2]<br><strong>John Maynard Keynes (UK):</strong> Imagined the IMF as a "cooperative fund upon which member states could draw to maintain economic activity and employment through periodic crises."[cite: 2]</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What are the 5 specialized bodies under the World Bank Group? <span>+</span></div>
+          <div class="flashcard-a">1. IBRD, 2. IDA, 3. IFC, 4. MIGA, and 5. ICSID[cite: 2].</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What are the exact definitions of Liberalization, Deregulation, and Privatization? <span>+</span></div>
+          <div class="flashcard-a">
+            <strong>Liberalization:</strong> "Reduction of restrictions or barriers on the free exchange of goods between nations."[cite: 2]<br>
+            <strong>Deregulation:</strong> "Reduction and elimination of government power in a particular industry, usually enacted to create more competition within the industry."[cite: 2]<br>
+            <strong>Privatization:</strong> "The transfer of ownership, property or business from the government to the private sector."[cite: 2]
+          </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">Which Philippine presidents represent protectionism vs. neoliberalism in the video? <span>+</span></div>
+          <div class="flashcard-a"><strong>Ferdinand Marcos Sr.</strong> represents protectionist state control of basic public utilities (PLDT, NPC, water), while <strong>Corazon Aquino</strong> represents neoliberal privatization and deregulation after 1986[cite: 2].</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: COMPLETE 35-ITEM IDENTIFICATION QUIZ -->
+    <section id="id-quiz" class="tab-content">
+      <div class="score-banner">
+        <div>Progress: <span id="id-progress">0/35</span></div>
+        <div>Score: <span id="id-score">0 / 35</span></div>
+        <div class="btn-group">
+          <button class="btn-ctrl" onclick="shuffleIdQuiz()">🔀 Shuffle Questions</button>
+          <button class="btn-ctrl" onclick="resetIdQuiz()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <div id="id-container"></div>
+    </section>
+
+    <!-- TAB 4: COMPLETE 35-ITEM MULTIPLE CHOICE QUIZ -->
+    <section id="mc-quiz" class="tab-content">
+      <div class="score-banner">
+        <div>Progress: <span id="mc-progress">0/35</span></div>
+        <div>Score: <span id="mc-score">0 / 35</span></div>
+        <div class="btn-group">
+          <button class="btn-ctrl" onclick="shuffleMcQuiz()">🔀 Shuffle Questions</button>
+          <button class="btn-ctrl" onclick="resetMcQuiz()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <div id="mc-container"></div>
+    </section>
+  </main>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById(tabId).classList.add('active');
+      const targetBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+
+    // 35 Master Question Items
+    const masterQuestions = [
+      {
+        id: 1,
+        question: "What ancient world trade system dating back at least 5,000 years connected Asia, Africa, and Europe?",
+        accepted: ["silk road", "the silk road"],
+        displayAnswer: "The Silk Road",
+        options: ["The Silk Road", "Trans-Saharan Route", "The Royal Road", "Amber Road"],
+        correctIndex: 0,
+        explanation: "The video identifies the Silk Road as the best-known example of archaic globalization connecting Asia, Africa, and Europe."
+      },
+      {
+        id: 2,
+        question: "In what monetary terms is the international exchange of goods and services expressed in the global economy definition?",
+        accepted: ["monetary units of account", "monetary unit of account", "units of account"],
+        displayAnswer: "Monetary units of account",
+        options: ["Monetary units of account", "Foreign exchange reserves", "Special Drawing Rights", "Gold standard equivalencies"],
+        correctIndex: 0,
+        explanation: "Slide definition: 'considered as the international exchange of goods and services that is expressed in monetary units of account.'"
+      },
+      {
+        id: 3,
+        question: "What is the global economy called when described simply on Slide 5 as 'one giant ______'?",
+        accepted: ["entity", "giant entity", "one giant entity"],
+        displayAnswer: "Entity (one giant entity)",
+        options: ["Entity", "Corporation", "Enterprise", "Monopoly"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Put simply; the GLOBAL ECONOMY is one giant entity.'"
+      },
+      {
+        id: 4,
+        question: "Which dimension of the global economy refers to moving manufacturing from Europe and North America to developing countries in Asia and Africa?",
+        accepted: ["globalization of production", "production"],
+        displayAnswer: "Globalization of production",
+        options: ["Globalization of production", "Globalization of communication", "Globalization of capital", "Globalization of consumerism"],
+        correctIndex: 0,
+        explanation: "The globalization of production involves dispersing production facilities and manufacturing beyond First World nations."
+      },
+      {
+        id: 5,
+        question: "What term describes 'the extension of economic activities of nation states across borders'?",
+        accepted: ["internationalization"],
+        displayAnswer: "Internationalization",
+        options: ["Internationalization", "Economic Globalization", "Liberalization", "Regionalization"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Internationalization is about the extension of economic activities of nation states across borders.'"
+      },
+      {
+        id: 6,
+        question: "Unlike internationalization's quantitative change, economic globalization represents what specific kind of transformation?",
+        accepted: ["qualitative", "qualitative transformation", "qualitative change"],
+        displayAnswer: "Qualitative transformation",
+        options: ["Qualitative transformation", "Quantitative transformation", "Technological transition", "Monetary reform"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Economic globalization is functional integration between internationally dispersed activities. That is, a qualitative transformation than just quantitative change.'"
+      },
+      {
+        id: 7,
+        question: "Which explorer's discovery of America in 1492 was cited as a major manifestation of early globalization?",
+        accepted: ["christopher columbus", "columbus"],
+        displayAnswer: "Christopher Columbus",
+        options: ["Christopher Columbus", "Ferdinand Magellan", "Amerigo Vespucci", "John Cabot"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Discovery of America by Christopher Columbus in 1492.'"
+      },
+      {
+        id: 8,
+        question: "Which Portuguese explorer discovered the direct sea route to India?",
+        accepted: ["vasco da gama", "da gama"],
+        displayAnswer: "Vasco da Gama",
+        options: ["Vasco da Gama", "Bartolomeu Dias", "Prince Henry the Navigator", "Afonso de Albuquerque"],
+        correctIndex: 0,
+        explanation: "Slide text: 'and the discovery of the direct sea route to India by Vasco de Gama.'"
+      },
+      {
+        id: 9,
+        question: "Name either of the two early 17th-century European trading enterprises cited as the first Multinational Corporations (MNCs).",
+        accepted: [
+          "british east india company", 
+          "dutch east india company", 
+          "british east india", 
+          "dutch east india",
+          "east india company",
+          "east india companies"
+        ],
+        displayAnswer: "British East India Company / Dutch East India Company",
+        options: ["British & Dutch East India Companies", "Virginia & Massachusetts Bay Companies", "Hudson's Bay Company", "Levant & Muscovy Companies"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Founding of the first MNCs, British and Dutch East India Companies.'"
+      },
+      {
+        id: 10,
+        question: "What is defined on the slide as a 'sustained, a long-term downturn in economic activity in one or more economies'?",
+        accepted: ["depression", "economic depression", "a depression"],
+        displayAnswer: "A depression",
+        options: ["A depression", "A stagflation", "A trade embargo", "A liquidity trap"],
+        correctIndex: 0,
+        explanation: "Slide text: 'A depression is a sustained, a long-term downturn in economic activity in on or more economies.'"
+      },
+      {
+        id: 11,
+        question: "During which war did high demand and high crop prices cause farmers to heavily overproduce?",
+        accepted: ["world war 1", "world war i", "ww1", "wwi", "first world war"],
+        displayAnswer: "World War I (WWI)",
+        options: ["World War I", "Napoleonic Wars", "World War II", "American Civil War"],
+        correctIndex: 0,
+        explanation: "High wartime demand stimulated massive agricultural overproduction; post-war demand collapsed and caused farmer loan defaults."
+      },
+      {
+        id: 12,
+        question: "What was the condition where the 'rich got richer and poor got poorer,' leaving Americans unable to afford goods produced?",
+        accepted: ["uneven distribution of income", "uneven income distribution", "income inequality"],
+        displayAnswer: "Uneven distribution of income",
+        options: ["Uneven distribution of income", "Hyperinflation", "Credit contraction", "Trade deficit gap"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Uneven distribution of income – Rich got richer and poor got poorer – many Americans could not afford to buy goods produced.'"
+      },
+      {
+        id: 13,
+        question: "What is the stock market practice defined on the slide as 'paying a small % of stock's price and borrowing the rest'?",
+        accepted: ["buying on margin", "margin buying", "on margin"],
+        displayAnswer: "Buying on Margin",
+        explanation: "Buying on margin allowed speculative buyers to borrow heavily to purchase stocks, triggering disaster when prices fell."
+      },
+      {
+        id: 14,
+        question: "How many of the nation's 25,000 banks had failed in the United States by the year 1933?",
+        accepted: ["11000", "11,000", "11 thousand"],
+        displayAnswer: "11,000 banks",
+        options: ["11,000", "5,000", "18,000", "22,000"],
+        correctIndex: 0,
+        explanation: "Slide text: '1933 – 11,000 of nation's 25,000 banks had failed.'"
+      },
+      {
+        id: 15,
+        question: "Why did millions of bank depositors lose their lifetime savings during the bank failures of the Great Depression?",
+        accepted: [
+          "account not insured", 
+          "accounts not insured", 
+          "not insured", 
+          "uninsured", 
+          "no insurance",
+          "no deposit insurance"
+        ],
+        displayAnswer: "Accounts were not insured",
+        options: ["Accounts were not insured", "Banks converted money to gold", "Government confiscated funds", "Depositors were foreign citizens"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Account not insured – millions lost their savings.'"
+      },
+      {
+        id: 16,
+        question: "During the Great Depression in the US, unemployment continued for 162 weeks, reaching a total of how many million unemployed?",
+        accepted: ["13 million", "13", "13000000", "13m"],
+        displayAnswer: "13 Million",
+        options: ["13 million", "8 million", "20 million", "25 million"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Continues for 162 weeks = 13 million unemployed.'"
+      },
+      {
+        id: 17,
+        question: "What global war lasting from 1939 to 1945 temporarily halted/worsened the Great Depression prior to the Bretton Woods conference?",
+        accepted: ["world war 2", "world war ii", "ww2", "wwii", "second world war"],
+        displayAnswer: "World War II (WWII)",
+        options: ["World War II", "Korean War", "Cold War", "Spanish Civil War"],
+        correctIndex: 0,
+        explanation: "Slide text: 'World War 2 worsen the Great Depression' (1939–1945)."
+      },
+      {
+        id: 18,
+        question: "What was the official formal title of the July 1944 Bretton Woods Conference?",
+        accepted: [
+          "united nations monetary and financial conference",
+          "the united nations monetary and financial conference",
+          "un monetary and financial conference"
+        ],
+        displayAnswer: "United Nations Monetary and Financial Conference",
+        options: [
+          "United Nations Monetary and Financial Conference",
+          "International Trade and Currency Accord",
+          "Allied Reconstruction and Development Forum",
+          "Geneva Global Economic Assembly"
+        ],
+        correctIndex: 0,
+        explanation: "Slide text: 'Bretton Woods Conference formally known as the United Nations Monetary and Financial Conference.'"
+      },
+      {
+        id: 19,
+        question: "How many delegates from 44 Allied nations attended the Bretton Woods Conference?",
+        accepted: ["730", "730 delegates"],
+        displayAnswer: "730 delegates",
+        options: ["730", "500", "950", "1,200"],
+        correctIndex: 0,
+        explanation: "Slide text: 'It was the gathering of 730 delegates from all 44 Allied nations.'"
+      },
+      {
+        id: 20,
+        question: "Which American economist foresaw an IMF that 'functioned more like a bank, making sure that borrowing states could repay their debts on time'?",
+        accepted: ["harry dexter white", "harry white", "white"],
+        displayAnswer: "Harry Dexter White",
+        options: ["Harry Dexter White", "Milton Friedman", "Arthur Laffer", "Cordell Hull"],
+        correctIndex: 0,
+        explanation: "Harry Dexter White advocated for strict bank-like discipline and timely debt repayment."
+      },
+      {
+        id: 21,
+        question: "Which British economist imagined that the IMF would be a 'cooperative fund upon which member states could draw to maintain economic activity and employment'?",
+        accepted: ["john maynard keynes", "keynes", "john keynes"],
+        displayAnswer: "John Maynard Keynes",
+        options: ["John Maynard Keynes", "Adam Smith", "David Ricardo", "Friedrich Hayek"],
+        correctIndex: 0,
+        explanation: "Keynes championed an overdraft cooperative fund model to buffer periodic economic shocks."
+      },
+      {
+        id: 22,
+        question: "On what date did the Articles of Agreement formally bring the IMF into existence following ratification by 29 countries?",
+        accepted: ["27 december 1945", "december 27 1945", "december 27, 1945", "27 dec 1945"],
+        displayAnswer: "December 27, 1945",
+        options: ["December 27, 1945", "July 22, 1944", "March 1, 1947", "May 8, 1948"],
+        correctIndex: 0,
+        explanation: "Slide text: 'came into formal existence on 27 December 1945 after the 29 countries ratified the Article of Agreement.'"
+      },
+      {
+        id: 23,
+        question: "Which country became the first to borrow from the IMF on May 8, 1947?",
+        accepted: ["france"],
+        displayAnswer: "France",
+        options: ["France", "United Kingdom", "Germany", "Greece"],
+        correctIndex: 0,
+        explanation: "Slide text: 'on 8th day of May, France became the first country to borrow from it.'"
+      },
+      {
+        id: 24,
+        question: "Which fundamental mission of the IMF oversees the international monetary system and monitors members' economic and financial policies?",
+        accepted: ["economic surveillance", "surveillance"],
+        displayAnswer: "Economic Surveillance",
+        explanation: "Slide text: 'Economic Surveillance – Oversees the international monetary system and monitors the economic and financial policies of it's 189 member countries.'"
+      },
+      {
+        id: 25,
+        question: "What primary source of IMF financial resources broadly reflects a member country's size in the world economy and determines its voting power?",
+        accepted: ["quotas", "member quotas", "quota"],
+        displayAnswer: "Member Quotas",
+        options: ["Member Quotas", "Voluntary Donations", "Gold Bullion Reserves", "Direct Bilateral Tariffs"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Member Quotas are the primary source of IMF financial resource. A member's quota broadly reflects the size and position in the world economy.'"
+      },
+      {
+        id: 26,
+        question: "What concept did the World Bank promote that attempted to 'reconcile economic growth and environmental protection in developing countries'?",
+        accepted: ["sustainable development"],
+        displayAnswer: "Sustainable development",
+        options: ["Sustainable development", "Industrial modernization", "Green mercantilism", "Ecological deregulation"],
+        correctIndex: 0,
+        explanation: "Slide text: '\"sustainable development,\" which attempted to reconcile economic growth and environmental protection in developing countries.'"
+      },
+      {
+        id: 27,
+        question: "Which specialized World Bank institution focuses on 'Settlement of Investment Disputes' between foreign investors and member states?",
+        accepted: ["icsid", "international centre for settlement of investment disputes"],
+        displayAnswer: "ICSID",
+        options: ["ICSID", "MIGA", "IFC", "IDA"],
+        correctIndex: 0,
+        explanation: "ICSID is the International Centre for Settlement of Investment Disputes."
+      },
+      {
+        id: 28,
+        question: "What interim trade agreement signed in 1947 served as a forum for trade negotiations prior to the WTO?",
+        accepted: ["gatt", "general agreement on tariffs and trade"],
+        displayAnswer: "GATT (General Agreement on Tariffs and Trade)",
+        options: ["GATT", "NAFTA", "APEC", "ITO"],
+        correctIndex: 0,
+        explanation: "Slide text: 'General Agreement on Tariffs and Trade (GATT) – An interim agreement signed in 1947... Served as forum for trade negotiations.'"
+      },
+      {
+        id: 29,
+        question: "In what year was the World Trade Organization (WTO) formally created to replace GATT?",
+        accepted: ["1994"],
+        displayAnswer: "1994",
+        options: ["1994", "1989", "1999", "1947"],
+        correctIndex: 0,
+        explanation: "Slide text: 'WTO was not created until 1994.'"
+      },
+      {
+        id: 30,
+        question: "What term is defined on Slide 52 as the 'reduction of restrictions or barriers on the free exchange of goods between nations'?",
+        accepted: ["liberalization", "trade liberalization"],
+        displayAnswer: "Liberalization",
+        options: ["Liberalization", "Privatization", "Deregulation", "Nationalization"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Liberalization – Reduction of restrictions or barriers on the free exchange of goods between nations.'"
+      },
+      {
+        id: 31,
+        question: "What term is defined on Slide 53 as the 'reduction and elimination of government power in a particular industry, usually enacted to create more competition'?",
+        accepted: ["deregulation"],
+        displayAnswer: "Deregulation",
+        options: ["Deregulation", "Liberalization", "Subsidization", "Interventionism"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Deregulation – Reduction and elimination of government power in a particular industry, usually enacted to create more competition within the industry.'"
+      },
+      {
+        id: 32,
+        question: "What term is defined on Slide 55 as 'the transfer of ownership, property or business from the government to the private sector'?",
+        accepted: ["privatization", "privatisation"],
+        displayAnswer: "Privatization",
+        explanation: "Slide text: 'Privatization – The transfer of ownership, property or business from the government to the private sector.'"
+      },
+      {
+        id: 33,
+        question: "Which Philippine president's administration (post-1986) was cited by the lecturer as carrying out deregulation and privatization of basic industries?",
+        accepted: ["corazon aquino", "cory aquino", "president corazon aquino", "aquino"],
+        displayAnswer: "Corazon Aquino",
+        options: ["Corazon Aquino", "Ferdinand Marcos Sr.", "Fidel V. Ramos", "Gloria Macapagal Arroyo"],
+        correctIndex: 0,
+        explanation: "The lecturer cites Corazon Aquino's administration following the Marcos era as the period when state enterprises and utilities were deregulated and privatized."
+      },
+      {
+        id: 34,
+        question: "Which Philippine president maintained centralized state control and monopoly over basic public utilities (PLDT telecom, NPC power, water) under Martial Law?",
+        accepted: ["ferdinand marcos", "ferdinand marcos sr", "marcos", "president marcos"],
+        displayAnswer: "Ferdinand Marcos Sr.",
+        options: ["Ferdinand Marcos Sr.", "Diosdado Macapagal", "Ramon Magsaysay", "Manuel Roxas"],
+        correctIndex: 0,
+        explanation: "The lecturer uses Ferdinand Marcos Sr. to illustrate protectionist, interventionist state control over basic utilities and industries."
+      },
+      {
+        id: 35,
+        question: "In neo-mercantilism, what term describes the protectionist policy of replacing foreign imported goods with domestically manufactured alternatives?",
+        accepted: ["import substitution", "isi", "import substitution industrialization"],
+        displayAnswer: "Import Substitution",
+        options: ["Import Substitution", "Export-Led Growth", "Free Trade Liberalization", "Tariff Reduction"],
+        correctIndex: 0,
+        explanation: "Slide text: 'Import Substitution' under Neo-mercantilism refers to domestic production to replace foreign imports."
+      }
+    ];
+
+    // Shuffle helper (Fisher-Yates)
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    // ==========================================
+    // IDENTIFICATION QUIZ LOGIC
+    // ==========================================
+    let idQuestionsList = [...masterQuestions];
+    let idState = {};
+
+    function renderIdCards() {
+      const mount = document.getElementById('id-container');
+      mount.innerHTML = '';
+
+      idQuestionsList.forEach((q, idx) => {
+        const div = document.createElement('div');
+        div.className = 'quiz-card';
+        div.id = `id-card-${q.id}`;
+        div.innerHTML = `
+          <div class="quiz-q-num">Question ${idx + 1} of${idQuestionsList.length}</div>
+          <div class="quiz-prompt">${q.question}</div>
+          <div class="quiz-input-group">
+            <input type="text" class="quiz-input" id="id-input-${q.id}" placeholder="Type exact answer here..." autocomplete="off" />
+            <button class="btn-submit" onclick="submitIdAnswer(${q.id})">Check</button>
+          </div>
+          <div class="feedback-box" id="id-feedback-${q.id}"></div>
+        `;
+        mount.appendChild(div);
+      });
+    }
+
+    function cleanInput(val) {
+      return val.trim().toLowerCase().replace(/['".,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+    }
+
+    function submitIdAnswer(id) {
+      const q = idQuestionsList.find(item => item.id === id);
+      const input = document.getElementById(`id-input-${id}`);
+      const feedback = document.getElementById(`id-feedback-${id}`);
+      const userVal = cleanInput(input.value);
+
+      if (!userVal) {
+        alert("Please enter an answer before checking.");
+        return;
+      }
+
+      const isCorrect = q.accepted.some(ans => cleanInput(ans) === userVal);
+
+      if (isCorrect) {
+        feedback.className = 'feedback-box correct';
+        feedback.innerHTML = `
+          <strong>✓ Correct!</strong>
+          ${q.explanation}
+        `;
+        idState[id] = 1;
+      } else {
+        feedback.className = 'feedback-box wrong';
+        feedback.innerHTML = `
+          <strong>✗ Incorrect!</strong>
+          <strong>Correct Answer:</strong> ${q.displayAnswer}<br>
+          <span style="font-size:0.85em; margin-top:0.3rem; display:block;"><strong>Slide Context:</strong> ${q.explanation}</span>
+        `;
+        idState[id] = 0;
+      }
+
+      updateIdScore();
+    }
+
+    function updateIdScore() {
+      const answered = Object.keys(idState).length;
+      const correct = Object.values(idState).reduce((a, b) => a + b, 0);
+
+      document.getElementById('id-progress').innerText = `${answered}/${idQuestionsList.length}`;
+      document.getElementById('id-score').innerText = `${correct} / ${idQuestionsList.length}`;
+    }
+
+    function shuffleIdQuiz() {
+      idQuestionsList = shuffleArray(idQuestionsList);
+      idState = {};
+      renderIdCards();
+      updateIdScore();
+    }
+
+    function resetIdQuiz() {
+      idState = {};
+      renderIdCards();
+      updateIdScore();
+    }
+
+    // ==========================================
+    // MULTIPLE CHOICE QUIZ LOGIC
+    // ==========================================
+    let mcQuestionsList = masterQuestions.map(q => {
+      // Create a shuffled copy of options for each question
+      const originalOptions = q.options || [
+        q.displayAnswer, 
+        "Alternative Policy Option A", 
+        "Alternative Policy Option B", 
+        "Alternative Policy Option C"
+      ];
+      const correctAnswerText = originalOptions[q.correctIndex || 0];
+      const shuffledOptions = shuffleArray(originalOptions);
+      return {
+        ...q,
+        shuffledOptions,
+        correctAnswerText
+      };
+    });
+    let mcState = {};
+
+    function renderMcCards() {
+      const mount = document.getElementById('mc-container');
+      mount.innerHTML = '';
+
+      mcQuestionsList.forEach((q, idx) => {
+        const div = document.createElement('div');
+        div.className = 'quiz-card';
+        div.id = `mc-card-${q.id}`;
+
+        let optionsHtml = '';
+        q.shuffledOptions.forEach((opt, optIdx) => {
+          optionsHtml += `
+            <button class="mc-option" id="mc-btn-${q.id}-${optIdx}" onclick="submitMcAnswer(${q.id}, '${opt.replace(/'/g, "\\'")}', ${optIdx})">
+              ${String.fromCharCode(65 + optIdx)}. ${opt}
+            </button>
+          `;
+        });
+
+        div.innerHTML = `
+          <div class="quiz-q-num">Question ${idx + 1} of ${mcQuestionsList.length}</div>
+          <div class="quiz-prompt">${q.question}</div>
+          <div class="mc-options" id="mc-opts-${q.id}">
+            ${optionsHtml}
+          </div>
+          <div class="feedback-box" id="mc-feedback-${q.id}"></div>
+        `;
+        mount.appendChild(div);
+      });
+    }
+
+    function submitMcAnswer(qId, selectedText, optIdx) {
+      if (mcState.hasOwnProperty(qId)) return; // already answered
+
+      const q = mcQuestionsList.find(item => item.id === qId);
+      const feedback = document.getElementById(`mc-feedback-${qId}`);
+      const isCorrect = (selectedText === q.correctAnswerText);
+
+      // Disable all option buttons for this question
+      const optsContainer = document.getElementById(`mc-opts-${qId}`);
+      const buttons = optsContainer.querySelectorAll('.mc-option');
+      buttons.forEach(btn => btn.disabled = true);
+
+      const clickedBtn = document.getElementById(`mc-btn-${qId}-${optIdx}`);
+
+      if (isCorrect) {
+        clickedBtn.classList.add('selected-correct');
+        feedback.className = 'feedback-box correct';
+        feedback.innerHTML = `
+          <strong>✓ Correct!</strong>
+          ${q.explanation}
+        `;
+        mcState[qId] = 1;
+      } else {
+        clickedBtn.classList.add('selected-wrong');
+        // highlight correct answer button
+        buttons.forEach(btn => {
+          if (btn.innerText.includes(q.correctAnswerText)) {
+            btn.classList.add('highlight-answer');
+          }
+        });
+        feedback.className = 'feedback-box wrong';
+        feedback.innerHTML = `
+          <strong>✗ Incorrect!</strong>
+          <strong>Correct Answer:</strong> ${q.correctAnswerText}<br>
+          <span style="font-size:0.85em; margin-top:0.3rem; display:block;"><strong>Slide Context:</strong> ${q.explanation}</span>
+        `;
+        mcState[qId] = 0;
+      }
+
+      updateMcScore();
+    }
+
+    function updateMcScore() {
+      const answered = Object.keys(mcState).length;
+      const correct = Object.values(mcState).reduce((a, b) => a + b, 0);
+
+      document.getElementById('mc-progress').innerText = `${answered}/${mcQuestionsList.length}`;
+      document.getElementById('mc-score').innerText = `${correct} / ${mcQuestionsList.length}`;
+    }
+
+    function shuffleMcQuiz() {
+      mcQuestionsList = shuffleArray(mcQuestionsList).map(q => {
+        const shuffledOptions = shuffleArray(q.shuffledOptions);
+        return { ...q, shuffledOptions };
+      });
+      mcState = {};
+      renderMcCards();
+      updateMcScore();
+    }
+
+    function resetMcQuiz() {
+      mcState = {};
+      renderMcCards();
+      updateMcScore();
+    }
+
+    // Initialize both quizzes on window load
+    window.onload = function() {
+      renderIdCards();
+      renderMcCards();
+    };
+  </script>
+</body>
+</html>
